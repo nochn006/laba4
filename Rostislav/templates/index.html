@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Категории</h2>
+    <a href="create">Категории</a>
+    <table>
+        <thead><th>Название</th><th>Жанр</th><th>Дата выпуска</th></thead><th>
+
+        Актеры
+    </th><thead><th>Дата показа фильма/th>
+        {% for product in products %}
+        <tr>
+            <td>
+                {{ product.name }}
+            </td>
+            <td>
+                {{ product.date }}
+            </td>
+            <td>
+                {{ product.release }}
+            </td>
+            <td> <a href="edit/{{product.id}}">Отредактировать</a> | <a href="delete/{{product.id}}">удалить</a>
+            </td>
+        </tr>
+         {% endfor %}
+    </table>
+</body>
+</html>

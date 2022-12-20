@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Категории</title>
+</head>
+<body>
+    <h2>Категории</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Название</label><br>
+            <input type="text" name="name" value="{{product.name}}" />
+        </p>
+        <p>
+            <label>Дата</label><br>
+            <input type="number" name="date" value="{{Films.date}}"/>
+        </p>
+        <p>
+            <label>Каталог</label><br>
+            <select name="Films">
+            {% for category in categories %}
+                <option value="{{company.id}}"
+                {%if Films.id == product.Films_id%}
+                  selected
+                {%endif%}
+            >{{Category.name}}</option>
+            {% endfor %}
+            </select>
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>doctype</title>
+</head>
+<body>
+    <h2></h2>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>название</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label></label><br>
+            <input type="number" name="" />
+        </p>
+        <p>
+            <label></label><br>
+            <select name="category">
+            {% for category in categories %}
+                <option value="{{company.id}}">{{category.name}}</option>
+            {% endfor %}
+            </select>
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form>
+</body>
+</html>
